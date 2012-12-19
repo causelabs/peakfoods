@@ -1,0 +1,40 @@
+CONFIGURATION
+
+Once you have deployed these files to a web server, you will need to set the following environment variables
+in the virtual host configuration:
+
+#Database Connection Settings
+SetEnv PF_DB_USERNAME "{DB Username}"
+SetEnv PF_DB_PASSWORD "{DB Password}"
+SetEnv PF_DB_HOST "{DB Host}"
+SetEnv PF_DB_NAME "{DB Name}"
+
+#Facebook Account
+SetEnv PF_FACEBOOK_APP_ID "{Facebook App ID}"
+
+#Yummly API
+SetEnv PF_YUMMLY_URL "http://api.yummly.com/v1/api/"
+SetEnv PF_YUMMLY_APP_ID "{Yummly App ID}"
+SetEnv PF_YUMMLY_APP_KEY "{Yummly App Key}"
+
+#Google Analytics Account
+SetEnv PF_GOOGLE_ANALYTICS_ACCOUNT "{Google Analytics Account}"
+
+#Feedback Widget Company
+SetEnv PF_FEEDBACK_COMPANY "{Feedback widget company name}"
+
+#Site location on server
+SetEnv PF_INSTALL_PATH "/var/www/www.somdomain.org"
+
+#Location of static assets (ex: a CDN)
+SetEnv PF_BASE_URL "http://assets.somdomain.org/stage/"
+SetEnv PF_SITE_URL "http://www.somdomain.org/"
+
+#Log file settings
+SetEnv PF_LOG_PATH "/etc/httpd/logs/www.somdomain.org"
+SetEnv PF_LOG_FILENAME "php_error.log"
+SetEnv PF_LOG_EMAIL "rick@somedomain.org"
+
+#Import script credentials
+SetEnv PF_IMPORT_USERNAME "ImportUser"
+SetEnv PF_IMPORT_PASSWORD "ImportPass"

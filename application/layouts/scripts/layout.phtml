@@ -1,0 +1,201 @@
+<?php echo $this->doctype() ?>
+<?php
+$lang='en-US';
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><html class="no-js"> <![endif]-->
+<head>
+
+	<?php
+	if(defined("BASEURL")) echo '<base href="'.BASEURL.'"></base>';
+	$this->headTitle('Peakfoods - Food is best at its peak.');
+	$this->headMeta()
+		->appendHttpEquiv('Content-Type','text/html; charset=UTF-8');
+		
+	//other JS files
+	$this->jQuery() ->addJavascriptFile(BASEURL.'js/libs/jquery.isotope.min.js')
+					->addJavascriptFile(BASEURL.'js/libs/spin.min.js');
+	//removed for now, may need to add back in for IE errors.
+	//->addJavascriptFile(BASEURL.'js/libs/modernizr-2.5.3-respond-1.1.0.min.js')
+		
+	
+		
+	$this->headLink()
+		->appendStylesheet(BASEURL.'styles/isotope.css')
+		->appendStylesheet(BASEURL.'styles/global.css');
+
+	echo $this->headTitle() . "\r";
+	echo $this->headMeta() . "\r";
+	echo $this->headStyle() . "\r";
+	echo $this->headLink() . "\r";
+	echo $this->headScript() . "\r";
+	?>
+
+	<meta name="viewport" content="width=device-width">
+	<meta name="title" content="Peakfoods - Food is best at its peak."/>
+	<meta name="description" content="Food is best at its peak. See what foods are in season where you live.'"/>
+	<meta name="keywords" content="fresh foods, foods in season, seasonal, food, organic, local, sustainable, sustainability, ripe, recipes, chef, cooking, produce" />
+	<meta property="og:type" content="website" />
+    <meta property="og:url" content="http://<?php echo $_SERVER['SERVER_NAME'] ?>" />
+    <meta property="og:image" content="http://<?php echo $_SERVER['SERVER_NAME'] ?>/img/social/facebook-avatar.jpg" />
+    <meta property="fb:app_id" content="<?php echo $this->fbAppId ?>" />
+    <meta property="og:title" content="Peakfoods - Food is best at its peak." />
+    <meta property="og:description" content="Find out what foods are fresh right now in your state." />
+</head>
+
+<body lang="en-US">
+	
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<header>
+	<div class="container">
+		<p class="logo"><a href="<?php echo SITEURL ?>"><span class="green">peak</span><span class="orange">foods</span></a><span class="beta">beta</span></p>
+		<div class="menu-btn"><img src="<?php echo BASEURL ?>img/layout/menu.png"></div>
+		<nav id="meta">
+			<div class="facebook">
+				<div id="fb-root"></div>
+					<div id="auth-loggedout">
+						<a href="#" id="auth-loginlink" class="btn-facebook">Log in with Facebook</a>
+					</div>
+					<div id="auth-loggedin" style="display:none">
+						Hi, <span id="auth-displayname"></span>  
+						(<a href="#" id="auth-logoutlink">logout</a>)
+					</div>
+					<script>
+					  window.fbAsyncInit = function() {
+					    FB.init({
+					      appId      : '<?php echo $this->fbAppId ?>', // App ID
+					      channelUrl : '//<?php echo $_SERVER['SERVER_NAME'] ?>/channel.php', // Channel File
+					      status     : true, // check login status
+					      cookie     : true, // enable cookies to allow the server to access the session
+					      xfbml      : true  // parse XFBML
+					    });
+					    
+					    // listen for and handle auth.statusChange events
+						FB.Event.subscribe('auth.statusChange', function(response) {
+							if (response.authResponse) {
+								// user has auth'd your app and is logged into Facebook
+								FB.api('/me', function(me){
+									if (me.name) {
+										$('#auth-displayname').html(me.name);
+									}
+									facebookId = me.id;
+									getPreferences();
+								})
+								$('#auth-loggedout').hide();
+								$('#auth-loggedin').show();
+							} else {
+							// user has not auth'd your app, or is not logged into Facebook
+								$('#auth-loggedout').show();
+								$('#auth-loggedin').hide();
+								facebookId = null;
+							}
+						});
+					  };
+					
+					  // Load the SDK Asynchronously
+					  (function(d){
+					     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+					     if (d.getElementById(id)) {return;}
+					     js = d.createElement('script'); js.id = id; js.async = true;
+					     js.src = "//connect.facebook.net/en_US/all.js";
+					     ref.parentNode.insertBefore(js, ref);
+					   }(document));
+					</script>
+			</div>
+			<!-- //facebook login widget -->
+			<ul>	
+				<li><a href="#" id="recipe-settings-link" class="dietary-settings">Recipe Settings</a></li>
+				<li><a href="<?php echo SITEURL ?>about" target="_self">About</a></li>
+			</ul>
+		</nav>
+		<!-- //meta nav -->
+	</div>
+	<!-- //container -->
+</header>
+<!-- //header -->
+
+
+<section id="recipe-settings" class="">
+	<div class="container">
+		<ul>
+			<li>
+				<input type="checkbox" name="dairyFree" id="dairyFree" value="1">
+				<label for="dairyFree">Dairy Free</label>
+			</li>
+			<li>
+				<input type="checkbox" name="glutenFree" id="glutenFree" value="1">
+				<label for="glutenFree">Gluten Free</label>
+			</li>
+			<li>
+				<input type="checkbox" name="soyFree" id="soyFree" value="1">
+				<label for="soyFree">Soy Free</label>
+			</li>
+			<li>
+				<input type="checkbox" name="sesameFree" id="sesameFree" value="1">
+				<label for="sesameFree">Sesame Free</label>
+			</li>
+			<li>
+				<input type="checkbox" name="vegetarian" id="vegetarian" value="1">
+				<label for="vegetarian">Vegetarian</label>
+			</li>
+			<li>
+				<input type="checkbox" name="noNuts" id="noNuts" value="1">
+				<label for="noNuts">No Nuts</label>
+			</li>
+		</ul>
+	</div>
+</section>
+<!--//recipe-settings -->
+<!-- // settings -->
+
+	<?php 
+		echo $this->layout()->content; 
+		echo $this->jQuery();
+	?>
+
+	<script type="text/javascript" src="http://use.typekit.com/khp2ake.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<?php
+	//Google Analytics, if an account is set
+	if(defined("GAACCT")): ?>
+    <script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', '<?php echo GAACCT ?>']);
+		_gaq.push(['_trackPageview']);
+		
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		var jsBase = '<?php echo $this->jsBase ?>';
+	</script>
+	<?php endif ?>
+	<?php
+	//Feedback Widget, if an account is set
+	if(defined("FEEDBACK")): ?>
+	<script type="text/javascript">
+	  var is_ssl = ("https:" == document.location.protocol);
+	  var asset_host = is_ssl ? "https://d3rdqalhjaisuu.cloudfront.net/" : "http://d3rdqalhjaisuu.cloudfront.net/";
+	  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	
+	<script type="text/javascript">
+	  var feedback_widget_options = {};
+	
+	  feedback_widget_options.display = "overlay";  
+	  feedback_widget_options.company = "<?php echo FEEDBACK ?>";
+	  feedback_widget_options.placement = "right";
+	  feedback_widget_options.color = "rgba(0,0,0,0.3)";
+	  feedback_widget_options.style = "idea";
+
+	  var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+	</script>
+	<?php endif; ?>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<script type="text/javascript">
+	var yummly_url = "<?php echo $this->yummly_url; ?>";
+	var yummly_app_id = "<?php echo $this->yummly_app_id; ?>";
+	var yummly_app_key = "<?php echo $this->yummly_app_key; ?>";
+</script>
+<div class="container">
+	<nav id="options">
+		<form id="location-date">
+			<fieldset>
+				<div class="where">
+					<label for="location">Where</label>
+					<select name="location" id="location">
+						<?php
+						foreach($this->states as $stateCode => $stateName)
+						{
+							?><option value="<?php echo $stateCode ?>"<?php if($stateCode == $this->currentState) echo ' selected="selected"'; ?>><?php echo $stateName ?></option><?php
+						}
+						?>
+					</select>
+				</div>
+				<!-- //where -->
+
+				<div class="when">
+					<label for="month">When</label>
+					<select name="month" id="month">
+						<?php
+						foreach($this->months as $monthCode => $monthData)
+						{
+							?><option value='<?php echo $monthCode ?>'<?php echo $monthData['selected'] ?>><?php echo $monthData['name'] ?></option><?php
+						}
+						?>
+					</select>
+				</div>
+				<!-- //when -->
+				
+				<ul id="filters" class="option-set" data-option-key="filter">
+					<li class="filter-label">What</li>
+					<li><a href="#filter" data-option-value=".overview" class="selected">All</a></li>
+					<li><a href="#filter" data-option-value=".overview.vegetable">Veggies</a></li>
+					<li><a href="#filter" data-option-value=".overview.fruit">Fruits</a></li>
+					<li><a href="#filter" data-option-value=".overview.herb">Herbs</a></li>
+				</ul>
+				<!-- //filters -->	
+			</fieldset>
+		</form>
+	</nav>
+	<!-- //options -->
+
+
+	<section id="results" style="clear:both;">
+		<div id="foods">
+			<?php
+			foreach($this->foodList as $food)
+			{
+				break;
+				?>
+				<div class="food <?php echo  $food['type'] ?>" data-category="<?php echo  $food['type'] ?>" id="food<?php echo  $food['id'] ?>" style="background-image: url()">
+					<img src="/img/<?php echo  $food['image'] ?>.jpg">
+					<h2 class="name" style="background-color:<?php echo  $food['background_color'] ?>"><?php echo  $food['name'] ?></h2>
+				</div>
+				<?php
+			}
+			?>
+			<div class="recipe" id="recipes" style="display:none;">
+				<div class="cardColorOverlay">
+					<h2>Recipes with </h2>
+					<a href="#" class="closeButton">Back</a>
+					<div class="recipeScroller"></div>
+					<div class="recipeLoader"></div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="nutrition" id="nutritionInfo" style="display:none">
+				<div class="cardColorOverlay">
+					<h2>' + data.foods[i].name + ' <span>' + data.foods[i].nutrition['unit'] + '</span></h2>
+					<div id="nutritionContent"></div>
+					<a href="#" class="closeButton">Back</a>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- #foods -->
+		<div id="noFoods" style="display:none;">
+			<img src="<?php echo BASEURL ?>img/foods/phone/wasteland.jpg" alt="There are currently no foods in season for your selected location.">
+			<p>There are currently no foods in season for your selected location.</p>
+			<p>You live in a barren waste-land.</p>
+			<p>You should move!</p>
+		</div>
+	</section>
+	<!-- //results -->
+
+</div>
+<!-- //container -->
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<style>
+	.cardColorOverlay{float:none !important;}
+	#recipes{min-height:100%;}
+	#recipes .cardColorOverlay{min-height:1300px}
+	#nutritionInfo .cardColorOverlay{position: relative;}
+	.recipeLoader{min-height:100%;}
+	.recipeContainer img{display:inline}
+	.recipeLoader{background-position:center 150px;}
+	.closeButton{z-index: 10;}
+	.recipe{overflow:visible;}
+</style>
+
+<?php
+$this->jQuery()->addJavascriptFile(BASEURL.'js/foods.js');
+$this->jQuery()->addJavascriptFile(BASEURL.'js/preferences.js');
+$this->jQuery()->addJavascriptFile(BASEURL.'js/yummly.js');
+?>

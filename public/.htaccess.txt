@@ -1,0 +1,13 @@
+Header add Access-Control-Allow-Origin *
+Header add Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header add Access-Control-Allow-Headers X-Requested-With
+Header add Cache-Control "max-age=3600, must-revalidate"
+
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

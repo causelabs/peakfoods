@@ -1,0 +1,1249 @@
+@import "normalize";
+@import "mixins";
+@import "items";
+
+/** variables *******************************************************************************/
+
+//  dimensions
+$containerWidth: 1290px; 
+$headerHeight: 55px;
+
+// padding & margins
+
+$cardPadding: 20px 20px 40px 20px;
+
+//  colors
+$backgroundColor: #000;
+$green: #baf242;
+$orange: #fab74e;
+$tan: #a6511d;
+
+$settingsBackground: darken($tan, 25%);
+
+$starsWidth: 100px;
+$starsHeight: 16px;
+
+
+/********************************************************************************************
+	global
+*********************************************************************************************/
+
+*{
+	@include box;
+}
+
+html{
+	background: $backgroundColor url(/img/layout/bg.jpg);
+}
+
+body{
+	color: #FFF;
+	@include typeface; 
+	@include user-select(none);
+}
+
+img{
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+}
+
+h1, h2, h3, h4, h5{
+	cursor: default;
+}
+
+.container{
+	max-width: $containerWidth;
+	margin: 0 auto;
+	@include clearfix;
+	padding: 0 20px;
+}
+
+
+/********************************************************************************************
+	header
+*********************************************************************************************/
+
+header{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: $headerHeight;
+	color: #bb682f;
+	border-bottom: 1px solid darken($tan, 20%);
+	@include clearfix;
+	@include user-select(none);
+}
+
+#meta{
+	float: left;
+	height: $headerHeight;
+
+	ul{
+		text-align: right;
+		margin: 0;
+		padding: 0; 
+		float: right;
+
+		li{
+			display: inline-block;
+			float: left;
+			border-right: 1px solid darken($tan, 20%);
+
+			&:last-child, &:nth-child(2){
+				border-right: none;
+			}
+			& > a{
+				display: block;
+				color: $green;
+				text-decoration: none;
+				padding: 0px 20px;
+				height: $headerHeight;
+				line-height: $headerHeight;
+
+				&.dietary-settings{
+				&.on{
+				}
+			}
+				&:hover{
+					color: lighten($green, 20%);
+				}
+				&:active{
+					color: $orange;
+				}
+			}
+		}
+	}
+}
+
+.facebook{
+	float: left;
+	padding: 12px 20px 0 20px;
+	display: block;
+	height: $headerHeight;
+	border-right: 1px solid darken($tan, 20%);
+
+	#auth-loggedin{
+		color: #FFF;
+		padding-top: 10px;
+
+		a{
+			color: $green;
+		}
+	}
+}
+
+.btn-facebook{
+	@include gradient-bg(darken($tan, 10%), darken($tan, 20%));
+	display: inline-block;
+	border-radius: 8px;
+	margin: 2px 0 0 0;
+	padding: 5px 14px;
+	text-decoration: none;
+	color: #e7c089 !important;
+
+	&:hover{
+		@include gradient-bg(darken($tan, 8%), darken($tan, 16%));
+		color: #FFF !important;
+	}
+}
+
+
+.logo{
+	display: inline-block;
+	float: left;
+	font-size: 36px;
+	font-weight: 300;
+	margin: 4px 50px 0 0;
+	a{
+		text-decoration: none;
+
+		.green{
+			color: #baf242;
+		}
+		.orange{
+			color: #fab74e;
+		}
+	}
+}
+
+.beta{
+	display: inline-block;
+	padding: 7px 7px;
+	font-size: 14px;
+	font-style: italic;
+	color: #FFF;
+	vertical-align: top;
+}
+
+.menu-btn{
+	display: none;
+	position: absolute;
+	top: 13px;
+	right: 10px;
+	width: 60px;
+	img{
+		max-width: 100%;
+	}
+}
+
+
+/*****************  recipe settings menu  *****************/
+
+
+#recipe-settings{
+	display: none;
+	float: left;
+	width: 100%;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	height: auto;
+	@include user-select(none);
+	
+	input[type="checkbox"]:checked+label{ 
+		color: #FFF;
+	} 
+
+	&.on{
+		display: block;
+	}
+
+	ul{
+		display: inline-block;
+		float: left;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		text-align: right;
+		border-bottom: 1px solid $settingsBackground;
+		border-left: 1px solid $settingsBackground;
+		border-right: 1px solid $settingsBackground;
+		background: rgba(0,0,0,0.15);
+		width: auto;
+		padding: 10px 0;
+		color: #FFF;
+
+		li{
+			display: inline-block;
+			padding: 0 20px;
+			color: $orange;
+			
+		}
+	}
+}
+
+
+
+/********************************************************************************************
+	Isotope Display
+*********************************************************************************************/
+
+
+
+/*****************  recipe settings menu  *****************/
+
+
+#options{
+	float: left;
+	display: inline-block;
+	padding: 15px 0;
+	margin: 15px 0 0 0;
+	@include user-select(none);
+
+	#filters{
+		float: left;
+
+		a{
+			padding: 6px 12px;
+			border-right: 1px solid darken($tan, 25%);
+			border-left: 1px solid darken($tan, 15%);
+			text-decoration: none;
+			font-weight: 500;
+			color: #FFF;
+			text-shadow: none;
+			text-align: center;
+			@include gradient-bg(darken($tan, 10%), darken($tan, 20%));
+
+			&:active{
+				border-right: 1px solid darken($tan, 31%);
+				border-left: 1px solid darken($tan, 26%);
+			}
+		}
+
+		li a.selected{
+			background: $green;
+			color: darken($green, 50%);
+			border-right: 1px solid darken($green, 40%);
+			box-shadow: 
+				inset 0 0px 3px 1px rgba(0,0,0,0.2),
+				inset 0 0px 10px 0 rgba(0,0,0,0.4);
+		}
+
+		li:nth-child(2) a {
+		  border-radius: 7px 0 0 7px;
+		  border-left: none;
+		}
+
+		li:last-child a{
+			border-right: none;
+		}
+	}
+
+	.filter-label{
+		padding: 8px 8px 0 0;
+		text-align: right;
+		display: inline-block;
+	}
+}
+
+#location-date, #filters{
+	display: inline-block;
+	float: left;
+}
+
+#location-date{
+	label{
+		padding: 0 4px 0 0;
+		text-align: right;
+		display: inline-block;
+	}
+
+	select{
+		margin: 0 20px 0 0;
+		font-size: 18px;
+		-webkit-appearance: none;
+		padding: 2px 10px;
+		background: rgba(0,0,0,0.2);
+		color: $green;
+		border: none;
+		font-weight: 300;
+		border: 2px solid darken($tan, 20%);
+	}
+}
+
+.where, .when{
+	display: inline-block;
+	float: left;
+	height: 40px;
+	margin: 0 0 5px;
+}
+
+
+
+
+
+/*****************  results grid *****************/
+
+#results{
+	@include clearfix;
+}
+
+#foods{
+	overflow: visible !important;
+	@include clearfix;
+}
+
+#noFoods{
+	img{
+		float: left;
+		margin: 0 30px 0 0;
+	}
+	p{
+		font-size: 20px;
+	}
+}
+
+.isotope-item{
+	width: 250px;
+	height: 150px;
+	background-size: 100%;
+	overflow: hidden;
+	@include user-select(none);
+
+	img{
+		display: none;
+	}
+}
+
+
+.overview{
+	h2{
+		position: absolute;
+		bottom: 0;
+	    height: 35px;
+	    line-height: 1.7;
+	    padding: 0 10px;
+	    width: 100%;
+		bottom:auto !important;
+		top:115px;
+		transition: all 0.4s ease;
+		-webkit-transition: all 0.4s ease;
+		-moz-transition: all 0.4s ease;
+		-o-transition: all 0.4s ease;
+		-webkit-transition: all 0.4s ease;
+		height:150px !important;
+		@include user-select(none);
+	}
+}
+
+.buttons{
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:115px; 
+	z-index: 5;
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.nutritionButton, .recipeButton{
+	&:hover{
+		background-color: rgba(0,0,0,0.1);
+	}
+	&:active{
+		background-color: rgba(0,0,0,0.2);
+	}
+}
+
+.nutritionButton{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:50%;
+	right:0;
+	border:none;
+	display:block;
+	background: url(/img/layout/bg-btn-nutrition.png) no-repeat center 13px;
+	background-size: 50%;
+}
+
+.recipeButton{
+	position:absolute;
+	top:0;
+	bottom:0; 
+	left:0;
+	right:50%;
+	border:none;
+	display:block;
+	border-right: 1px solid rgba(0,0,0,0.2);
+	background: url(/img/layout/bg-btn-recipes.png) no-repeat center 13px;
+	background-size: 50%;
+}
+
+.recipeButton span, .nutritionButton span{
+	color: white;
+	position: absolute;
+	text-align: center;
+	display: block;
+	left: 0;
+	right: 0;
+	bottom: 6px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.fill{
+	top:0 !important;
+}
+
+
+/********** Nutrition Card ************************************************/
+
+.nutrition, .recipe{
+	background: blue;
+	width: 750px;
+	height: auto !important;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	h2{
+		position: relative;
+		font-size: 36px;
+		padding: 0 0 40px 10px;
+
+		span{
+			padding: 0 0 0 10px;
+			font-size: 22px;
+			font-weight: 300;
+		}
+	}
+}
+
+
+
+.cardColorOverlay{
+	float: left;
+	padding: $cardPadding;
+	text-shadow: 0px 1px 0 rgba(0,0,0,0.3);
+	height: auto;
+	width: 100%;
+	height: 100%;
+} 
+
+.recipe .cardColorOverlay{
+	ul{
+		list-style-type: none;
+		font-size: 18px;
+		margin-left: 20px;
+		margin-top: 30px;
+		padding: 0;
+
+		a{
+			color: #FFF;
+			text-decoration: none;
+			padding: 3px 8px;
+			line-height: 1.5;
+			border-radius: 30px;
+			background: rgba(0,0,0,0.4);
+			font-weight: bold;
+			padding: 8px 20px;
+
+			&:hover{
+				background: rgba(0,0,0,0.5);
+			}
+			&:active{
+				background: rgba(0,0,0,0.6);
+			}
+
+			&:after{
+				content: ">";
+				padding: 0 0 0 10px;
+			}
+		}
+	}
+
+	p{
+		a{
+			color: #FFF;
+			text-decoration: none;
+			padding: 3px 8px;
+			line-height: 1.5;
+			border-radius: 30px;
+			background: rgba(0,0,0,0.4);
+			font-weight: bold;
+			padding: 8px 20px;
+		}
+	}
+}
+
+
+
+.contactContainer{
+	position: absolute;
+	display: block;
+	bottom: 20px;
+	font-size: 18px;
+}
+
+.closeButton{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px;
+	background: rgba(0,0,0,0.2);
+
+	&:link, &:visited{
+		color: #FFF;
+		text-decoration: none;
+		font-size: 18px;
+	}
+	&:hover{
+		background: rgba(0,0,0,0.25);
+	}
+	&:active{
+		background: rgba(0,0,0,0.35);
+	}
+}
+
+
+
+.nutritionListLeft, .nutritionListRight{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+	font-weight: bold;
+	min-width: 220px;
+
+	li{
+		padding: 0 0 16px 0;
+		display: -webkit-box; 
+		-webkit-box-align: stretch; 
+		box-orient: horizontal;
+		-moz-box-orient: horizontal;
+		-webkit-box-orient: horizontal;
+		line-height: .8;
+
+		span{ 
+			cursor: default;
+			display: box;
+			display: -moz-box;
+			display: -webkit-box;
+			box-flex: 1;
+			-moz-box-flex: 1;
+			-webkit-box-flex: 1;
+			-moz-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+
+			&.left{
+				-webkit-box-flex: 0;
+			}
+			&.center{
+				margin: 0 5px;
+				background: url(/img/layout/bg-nutrition-dots.png) repeat-x bottom;
+			}
+			&.right{
+				-webkit-box-flex: 0;
+			}
+		}
+	}
+}
+
+.nutritionListLeft{
+	float: left;
+	margin: 0 70px 0 80px;
+}
+.nutritionListRight{
+	float: left;
+}
+
+
+
+
+/********** Recipe Card ************************************************/
+.recipe{
+	h2{
+		padding-bottom: 0;
+	}
+}
+
+.recipeDescription{
+	margin: 5px 0 0 10px;
+	font-size: 18px;
+}
+.contactUs{
+	margin-top: 30px;
+	position: absolute;
+	bottom: 20px; 
+	right: 20px;
+
+}
+
+.recipeContainer,
+	.recipeContainer:visited{
+		display:block;
+		color:black;
+		text-decoration:none;
+		border-bottom: 1px solid rgba(255,255,255,0.3);
+		position:relative;
+		padding: 0 20px;
+		
+
+		&:hover{
+			background: rgba(255,255,255,0.07);
+		}
+	}
+	.recipeContainer img{
+		float:left;
+		margin: 0px 10px 10px 0px;
+	}
+	.recipeScroller{
+		overflow-y:auto;
+		margin: 30px 0 0 0;
+	}
+	.recipeLoader{
+		position:absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		background-position:center center;
+		background-image:url(/img/loading.gif);
+		background-repeat:no-repeat;
+	}
+	.recipeName{
+		float:left;
+		padding-top:5px;
+		font-size: 1.7em;
+		font-weight: bold;
+		color: #FFF;
+		margin: 0 15px 0 0;
+	}
+	.recipeStarsContainer{
+		float:left;
+		margin: 5px 0 0 0;
+		background-size: $starsWidth $starsHeight;
+		width: $starsWidth;
+		height: $starsHeight;
+		background-image:url(/img/layout/bg-stars-empty.png);
+	}
+	.recipeStars{
+		background-size: $starsWidth $starsHeight;
+		max-width: $starsWidth;
+		height: $starsHeight;
+		background-image:url(/img/layout/bg-stars-full.png);
+	}
+	.recipeIngredients{
+		float:left;
+		margin-top:15px;
+		clear: both;
+		text-shadow: none;
+		color: #FFF !important;
+	}
+	.yummlyAttribution{
+		margin:20px 0px;
+		a{display: none;}
+		img{ display: none;}
+		background: url(/img/layout/yummly-logo.png) center right no-repeat;
+		background-size: 10%;
+		text-align: right;
+		padding: 0 77px 0 0;
+		text-shadow: none;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************************************************************************
+	About
+*********************************************************************************************/
+
+#about{
+	max-width: 800px;
+	margin-top: 20px;
+	line-height: 1.4;
+	float: left;
+	font-size: 15px;
+	
+	a{
+		
+		font-weight: 600;
+	}
+	h2{
+		font-size: 28px;
+	}
+	p{
+		text-shadow: none;
+	}
+	& > div{
+		position: relative;
+		height: auto;
+		@include clearfix;
+		padding: 30px;
+	}
+}
+
+.version{
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 50px;
+	top: 30px;
+	right: 30px;
+	text-align: right;
+	font-size: 16px;
+	font-style: italic;
+}
+
+
+/************ Purpose */
+
+.purpose{
+	background: fade-out(darken($green, 30%), .4);
+
+	ul{
+		line-height: 1.6;
+		margin-left: 20px;
+
+		li{
+		}
+	}
+}
+
+
+/************ Social */
+
+.social{
+	margin: 30px 0 0 0;
+
+	iframe{
+		margin: -1px 0 15px 0;
+		display: block;
+		float: left;
+	}
+	.connect_widget_not_connected_text{
+		color: #FFF !important;
+	}
+}
+
+
+/************ Origin */
+
+.origin{
+	background: rgba(240, 85, 35, 0.4);
+	a{
+		color: $orange;
+		text-decoration: none;
+		border-bottom: 1px solid $orange;
+	}
+	p{
+		float: left;
+		width: 50%;
+	}
+	img{
+		float: right;
+		margin: 0px 0 0 30px;
+		max-width: 45%;
+
+		&:hover{
+			opacity:0.8;
+			filter:alpha(opacity=80); /* For IE8 and earlier */
+		}
+	}
+}
+
+
+/************ Team */
+
+.team{
+	background: rgba(0, 169, 229, 0.4);
+	padding-bottom: 0;
+} 
+
+#members{
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: -30px 0 20px 0;
+
+	img{
+		max-width: 200px;
+	}
+	.member, .and{
+		display: inline-block;
+		padding: 0 30px 0 30px;
+		vertical-align: top;
+	}
+	.and{
+		font-size: 300px;
+		margin: -115px -100px 0 -100px;
+		
+		font-weight: 100;
+	}
+
+	img{
+		@include border-radius(999px);
+		margin: 0 0 10px 0;
+
+	}
+	span{
+		display: block;
+		text-align: center;
+		font-size: 22px;
+	}
+	.member-name{
+		font-weight: 600;
+		
+	}
+	.member-role{
+		font-size: 15px;
+		font-style: italic;
+	}
+	.twitter{
+		display: inline-block;
+		color: lighten(#02AAF0, 25%);
+		text-decoration: none;
+		font-size: 14px;
+		position: relative;
+		padding: 5px;
+
+		&:before{
+			content: '';
+			display: inline-block;
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			left: -16px;
+			top: 8px;
+			background: url(/img/layout/twitter-bird.png) no-repeat;
+			background-size: 100%;
+
+		}
+
+		&:hover{
+			text-decoration: underline;
+			color: lighten(#02AAF0, 35%);
+		}
+	}
+}
+
+
+/********************************************************************************************
+	media queries
+*********************************************************************************************/
+
+@media only screen and (min-width: 1400px) {
+
+}  
+@media only screen and (max-width: 900px) {
+	html{
+		overflow-x: hidden;
+	}
+
+	.food.recipe, .food.nutrition{
+		width: 100% !important;
+	}
+}
+
+
+/***********************************************************************************/
+
+
+@media only screen and (max-width: 768px) {
+
+	
+	.isotope-item{
+		width: 241px;
+		height: 145px;
+		
+	}
+	.overview h2{
+		top: 110px;
+
+	}
+
+	.cardColorOverlay{
+		
+
+		h2{
+			font-size: 36px;
+
+			span{
+				font-size: 22px;
+			}
+		}
+	}
+	.nutritionListLeft, .nutritionListRight{
+		margin: 0 0 0 40px;
+		min-width: 220px;
+	}
+}
+
+
+/***********************************************************************************/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	
+	.isotope-item{
+		width: 241px;
+		height: 145px;
+		
+	}
+	.overview h2{
+		top: 110px;
+
+	}
+}
+
+
+@media only screen and (max-width: 715px) {
+
+	#fdbk_tab{
+		display: none;
+	}
+	header{ 
+		margin: 0;
+		height: auto;
+		@include clearfix;
+
+		.logo{
+			padding: 0 0 5px 20px;
+			width: 100%; 
+			text-align: left;
+			
+		}
+		.menu-btn{
+			display: block;
+		} 
+
+		#meta{
+			float: left;
+			height: auto;
+			width: 100%;
+			@include clearfix;
+			background: darken($tan, 60%);
+			margin: 0;
+			display: none;
+
+			#auth-loggedout, #auth-loggedin{
+					margin-top: 10px;
+				}
+
+			&.on{
+				display: block;
+			}
+
+			.facebook{
+				float: left;
+				padding: 10px 0 20px 20px;
+				display: block;
+				width: 100%;
+				font-size: 1.2em;
+				border-bottom: 1px solid darken($tan, 30%);
+				margin-left: 0px;
+			}
+
+			ul{
+				text-align: left;
+				float: left;
+				width: 100%;
+				display: block;
+
+				li{
+					width: 100%;
+					display: block;
+					float: left;
+					border-bottom: 1px solid darken($tan, 30%);
+
+					&:first-child, &:last-child, &:nth-child(2){
+						border-right: none;
+						border-right: none !important;
+					}
+					& > a{
+						display: block;
+						color: $green;
+						text-decoration: none;
+						padding: 0px 20px;
+						height: $headerHeight;
+						line-height: $headerHeight;
+						font-size: 20px;
+						
+						&:hover{
+							color: lighten($green, 20%);
+							background: darken($tan, 35%);
+						}
+						&:active{
+							color: $orange;
+						}
+					}
+			
+				}
+			}
+
+			.facebook{
+				float: left;
+				padding: 3px 0 20px 15px !important;
+				display: block;
+				width: 100%;
+				font-size: 1.2em;
+				border-bottom: 1px solid darken($tan, 30%);
+				margin-left: 0px;
+			}
+		}
+	}
+
+	.container{
+		padding: 0;
+	}
+	.overview{
+		h2{
+			top: 58;
+		}
+	}
+	.isotope-item{
+		width: 160px;
+		height: 96px;
+	}
+	.overview h2{
+		top: 60px;
+	}
+	.fill{
+		top: -47px !important;
+	}
+
+	#options{
+		padding-bottom: 0;
+
+		#filters{
+			padding: 0;
+			width: 100%;
+			margin: 5px 0 20px 0;
+
+			.filter-label{
+				display: none !important;
+			}
+			li{
+				width: 25%;
+
+				&:nth-child(2) a, &:last-child a{
+					border-radius: 0;
+					
+				}
+			}
+			a{
+				border-radius: 0;
+				line-height: 44px;
+				font-size: 1.3em;
+				
+
+				&:first-child{
+					border-radius: 0;
+				}
+			}
+			li a.selected{
+				background: $green;
+				color: #000;
+			}
+		}
+		#location-date{
+			label{
+				padding: 0 4px 0 0;
+				text-align: right;
+				width: 60px;
+			}
+			select{
+				margin: 0 20px 0 0;
+				font-size: 18px;
+				-webkit-appearance: none;
+				padding: 2px 8px;
+				background: rgba(0,0,0,0.2);
+				color: $green;
+				border: none;
+				font-weight: 300;
+				border: 2px solid darken($orange, 46%);
+			}
+		}
+	}
+
+	.nutritionListLeft, .nutritionListRight{
+		margin: 0 0 0 30px;
+		min-width: 260px;
+	}
+	.cardColorOverlay{
+		h2{
+			font-size: 26px;
+
+			span{
+				font-size: 18px;
+			}
+		}
+	}
+	.nutrition .cardColorOverlay{
+		height: 900px;
+	}
+
+	#recipe-settings{
+
+		ul{
+			display: inline-block;
+			float: left;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			text-align: left;
+			border-bottom: 1px solid #4a2710;
+			background: rgba(0, 0, 0, 0.15);
+			width: 100%;
+			padding: 20px 20px;
+			color: #FFF;
+
+			li{
+				display: block;
+				padding: 10px 0 10px 15px;
+				height: 44px;
+
+				label{
+					height: 40px;
+					display: inline-block;
+					font-size: 1.4em;
+
+				}
+			}
+		}
+	}
+
+	.recipeButton, .nutritionButton{
+		background-position: center 20px;
+background-size: 70%;
+	}
+
+
+
+	#about{
+		width: 400px;
+
+		margin-top: 0;
+		.purpose{
+			.version{
+				top: 10px;
+				right: 10px;
+			}
+		}
+		.origin{
+			background: rgba(240, 85, 35, 0.4);
+			p{
+				float: left;
+				width: 100%;
+			}
+			img{
+				float: left;
+				margin: 10px 0 0 0px;
+				max-width: 100%;
+			}
+		}
+		.social{
+			overflow: hidden;
+		}
+		#members{
+			margin: 0px 0 0px -20px !important;
+
+			.member{
+				margin: 0 0 30px 0;
+			}
+		}
+		
+	}
+
+.recipe, .nutrition{
+    width: 100% !important;
+  }
+
+}
+
+
+/** helper classes *************************************************************************/
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }

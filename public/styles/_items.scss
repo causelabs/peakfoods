@@ -1,0 +1,229 @@
+/********************************************************************************************
+	standard resolution
+*********************************************************************************************/
+
+div[Food='Apples']{background-image: url(/img/foods/standard/apples.jpg); background-color:rgba(199, 28, 14, 0.90);}
+div[Food='Apricots']{background-image: url(/img/foods/standard/apricots.jpg); background-color:rgba(226, 75, 32, 0.90);}
+div[Food='Arugula']{background-image: url(/img/foods/standard/arugula.jpg); background-color:rgba(114, 173, 33, 0.9);}
+div[Food='Asian Pears']{background-image: url(/img/foods/standard/asianpears.jpg); background-color:rgba(226, 130, 20, 0.90);}
+div[Food='Asparagus']{background-image: url(/img/foods/standard/asparagus.jpg); background-color:rgba(111, 157, 48, 0.9);}
+div[Food='Avocados']{background-image: url(/img/foods/standard/avocados.jpg); background-color:rgba(59, 83, 33, 0.90);}
+div[Food='Basil']{background-image: url(/img/foods/standard/basil.jpg); background-color:rgba(108, 167, 53, 0.9);}
+div[Food='Beets']{background-image: url(/img/foods/standard/beets.jpg); background-color:rgba(173, 46, 69, 0.90);}
+div[Food='Blackberries']{background-image: url(/img/foods/standard/blackberries.jpg); background-color:rgba(67, 74, 83, 0.9);}
+div[Food='Blueberries']{background-image: url(/img/foods/standard/blueberries.jpg); background-color:rgba(26, 56, 127, 0.9);}
+div[Food='Bok Choy']{background-image: url(/img/foods/standard/bokchoy.jpg); background-color:rgba(92, 137, 60, 0.90);}
+div[Food='Broccoli']{background-image: url(/img/foods/standard/broccoli.jpg); background-color:rgba(73, 99, 17, 0.9);}
+div[Food='Brussel Sprouts']{background-image: url(/img/foods/standard/brusselssprouts.jpg); background-color:rgba(48, 116, 60, 0.90);}
+div[Food='Cabbage']{background-image: url(/img/foods/standard/cabbage.jpg); background-color:rgba(21, 108, 17, 0.9);}
+div[Food='Cantaloupe']{background-image: url(/img/foods/standard/cantaloupe.jpg); background-color:rgba(224, 138, 0, 0.9);}
+div[Food='Carrots']{background-image: url(/img/foods/standard/carrots.jpg); background-color:rgba(236, 131, 87, 0.9);}
+div[Food='Cauliflower']{background-image: url(/img/foods/standard/cauliflower.jpg); background-color:rgba(178, 176, 119, 0.9);}
+div[Food='Celery']{background-image: url(/img/foods/standard/celery.jpg); background-color:rgba(101, 147, 6, 0.90);}
+div[Food='Chard']{background-image: url(/img/foods/standard/chard.jpg); background-color:rgba(106, 154, 57, 0.9);}
+div[Food='Cherries']{background-image: url(/img/foods/standard/cherries.jpg); background-color:rgba(158, 0, 5, 0.90);}
+div[Food='Corn']{background-image: url(/img/foods/standard/corn.jpg); background-color:rgba(183, 175, 56, 0.9);}
+div[Food='Cucumbers']{background-image: url(/img/foods/standard/cucumbers.jpg); background-color:rgba(65, 91, 42, 0.90);}
+div[Food='Currants']{background-image: url(/img/foods/standard/currants.jpg); background-color:rgba(242, 38, 8, 0.90);}
+div[Food='Eggplant']{background-image: url(/img/foods/standard/eggplant.jpg); background-color:rgba(134, 11, 144, 0.9);}
+div[Food='Fava Beans']{background-image: url(/img/foods/standard/favabeans.jpg); background-color:rgba(132, 177, 52, 0.9);}
+div[Food='Fennel']{background-image: url(/img/foods/standard/fennel.jpg); background-color:rgba(107, 129, 11, 0.90);}
+div[Food='Grapefruit']{background-image: url(/img/foods/standard/grapefruit.jpg); background-color:rgba(209, 48, 6, 0.90);}
+div[Food='Grapes']{background-image: url(/img/foods/standard/grapes.jpg); background-color:rgba(179, 185, 77, 0.90);}
+div[Food='Green Beans']{background-image: url(/img/foods/standard/greenbeans.jpg); background-color:rgba(111, 152, 15, 0.9);}
+div[Food='Honey']{background-image: url(/img/foods/standard/honey.jpg); background-color:rgba(240, 154, 0, 0.90);}
+div[Food='Kale']{background-image: url(/img/foods/standard/kale.jpg); background-color:rgba(61, 117, 73, 0.9);}
+div[Food='Lavender']{background-image: url(/img/foods/standard/lavender.jpg); background-color:rgba(140, 101, 225, 0.9);}
+div[Food='Lettuce']{background-image: url(/img/foods/standard/lettuce.jpg); background-color:rgba(148, 184, 66, 0.9);}
+div[Food='Lima Beans']{background-image: url(/img/foods/standard/limabeans.jpg); background-color:rgba(163, 165, 160, 0.90);}
+div[Food='Mint']{background-image: url(/img/foods/standard/mint.jpg); background-color:rgba(110, 193, 64, 0.9);}
+div[Food='Mushrooms']{background-image: url(/img/foods/standard/mushrooms.jpg); background-color:rgba(183, 118, 21, 0.90);}
+div[Food='Nectarines']{background-image: url(/img/foods/standard/nectarines.jpg); background-color:rgba(164, 8, 13, 0.90);}
+div[Food='Okra']{background-image: url(/img/foods/standard/okra.jpg); background-color:rgba(114, 170, 47, 0.90);}
+div[Food='Onions']{background-image: url(/img/foods/standard/onions.jpg); background-color:rgba(204, 114, 49, 0.90);}
+div[Food='Oranges']{background-image: url(/img/foods/standard/oranges.jpg); background-color:rgba(212, 142, 20, 0.90);}
+div[Food='Parsley']{background-image: url(/img/foods/standard/parsley.jpg); background-color:rgba(101, 192, 0, 0.9);}
+div[Food='Parsnips']{background-image: url(/img/foods/standard/parsnips.jpg); background-color:rgba(174, 131, 66, 0.9);}
+div[Food='Peaches']{background-image: url(/img/foods/standard/peaches.jpg); background-color:rgba(249, 120, 48, 0.9);}
+div[Food='Peanuts']{background-image: url(/img/foods/standard/peanuts.jpg); background-color:rgba(161, 126, 51, 0.9);}
+div[Food='Pears']{background-image: url(/img/foods/standard/pears.jpg); background-color:rgba(159, 172, 10, 0.90);}
+div[Food='Peas']{background-image: url(/img/foods/standard/peas.jpg); background-color:rgba(84, 131, 5, 0.90);}
+div[Food='Pecans']{background-image: url(/img/foods/standard/pecans.jpg); background-color:rgba(194, 125, 39, 0.90);}
+div[Food='Pistachios']{background-image: url(/img/foods/standard/pistachios.jpg); background-color:rgba(152, 160, 6, 0.90);}
+div[Food='Plums']{background-image: url(/img/foods/standard/plums.jpg); background-color:rgba(182, 59, 93, 0.9);}
+div[Food='Polish Chocolate']{background-image: url(/img/foods/standard/polishchocolate.jpg); background-color:rgba(232,64,64,0.9);}
+div[Food='Potatoes']{background-image: url(/img/foods/standard/potatoes.jpg); background-color:rgba(174, 154, 62, 0.9);}
+div[Food='Pumpkin']{background-image: url(/img/foods/standard/pumpkin.jpg); background-color:rgba(228, 118, 8, 0.90);}
+div[Food='Radishes']{background-image: url(/img/foods/standard/radishes.jpg); background-color:rgba(197, 62, 64, 0.9);}
+div[Food='Raspberries']{background-image: url(/img/foods/standard/raspberries.jpg); background-color:rgba(197, 13, 50, 0.90);}
+div[Food='Rhubarb']{background-image: url(/img/foods/standard/rhubarb.jpg); background-color:rgba(180, 58, 60, 0.9);}
+div[Food='Rutabaga']{background-image: url(/img/foods/standard/rutabaga.jpg); background-color:rgba(122, 84, 66, 0.90);}
+div[Food='Sage']{background-image: url(/img/foods/standard/sage.jpg); background-color:rgba(73, 145, 125, 0.9);}
+div[Food='Scallions']{background-image: url(/img/foods/standard/scallions.jpg); background-color:rgba(99, 127, 15, 0.90);}
+div[Food='Snap Peas']{background-image: url(/img/foods/standard/snappeas.jpg); background-color:rgba(76, 143, 6, 0.90);}
+div[Food='Spinach']{background-image: url(/img/foods/standard/spinach.jpg); background-color:rgba(64, 110, 35, 0.9);}
+div[Food='Squash']{background-image: url(/img/foods/standard/squash.jpg); background-color:rgba(229, 178, 0, 0.9);}
+div[Food='Strawberries']{background-image: url(/img/foods/standard/strawberries.jpg); background-color:rgba(196, 0, 12, 0.9);}
+div[Food='Sweet Potatoes']{background-image: url(/img/foods/standard/sweetpotatoes.jpg); background-color:rgba(234, 83, 29, 0.90);}
+div[Food='Tomatoes']{background-image: url(/img/foods/standard/tomatoes.jpg); background-color:rgba(237, 7, 7, 0.90);}
+div[Food='Turnips']{background-image: url(/img/foods/standard/turnips.jpg); background-color:rgba(135, 100, 104, 0.90);}
+div[Food='Valerian']{background-image: url(/img/foods/standard/valerian.jpg); background-color:rgba(208, 104, 178, 0.9);}
+div[Food='Watermelon']{background-image: url(/img/foods/standard/watermelon.jpg); background-color:rgba(205, 54, 72, 0.9);}
+div[Food='Zucchini']{background-image: url(/img/foods/standard/zucchini.jpg); background-color:rgba(58, 126, 65, 0.9);}
+
+
+
+
+/* Phones (portrait and landscape) ----------- */
+@media (max-width : 480px) {
+	div[Food='Apples']{background-image: url(/img/foods/phone/apples.jpg); }
+	div[Food='Apricots']{background-image: url(/img/foods/phone/apricots.jpg);}
+	div[Food='Arugula']{background-image: url(/img/foods/phone/arugula.jpg);}
+	div[Food='Asian Pears']{background-image: url(/img/foods/phone/asianpears.jpg);}
+	div[Food='Asparagus']{background-image: url(/img/foods/phone/asparagus.jpg);}
+	div[Food='Avocados']{background-image: url(/img/foods/phone/avocados.jpg);}
+	div[Food='Basil']{background-image: url(/img/foods/phone/basil.jpg);}
+	div[Food='Beets']{background-image: url(/img/foods/phone/beets.jpg);}
+	div[Food='Blackberries']{background-image: url(/img/foods/phone/blackberries.jpg);}
+	div[Food='Blueberries']{background-image: url(/img/foods/phone/blueberries.jpg);}
+	div[Food='Bok Choy']{background-image: url(/img/foods/phone/bokchoy.jpg);}
+	div[Food='Broccoli']{background-image: url(/img/foods/phone/broccoli.jpg);}
+	div[Food='Brussel Sprouts']{background-image: url(/img/foods/phone/brusselssprouts.jpg);}
+	div[Food='Cabbage']{background-image: url(/img/foods/phone/cabbage.jpg);}
+	div[Food='Cantaloupe']{background-image: url(/img/foods/phone/cantaloupe.jpg);}
+	div[Food='Carrots']{background-image: url(/img/foods/phone/carrots.jpg);}
+	div[Food='Cauliflower']{background-image: url(/img/foods/phone/cauliflower.jpg);}
+	div[Food='Celery']{background-image: url(/img/foods/phone/celery.jpg);}
+	div[Food='Chard']{background-image: url(/img/foods/phone/chard.jpg);}
+	div[Food='Cherries']{background-image: url(/img/foods/phone/cherries.jpg);}
+	div[Food='Corn']{background-image: url(/img/foods/phone/corn.jpg);}
+	div[Food='Cucumbers']{background-image: url(/img/foods/phone/cucumbers.jpg);}
+	div[Food='Currants']{background-image: url(/img/foods/phone/currants.jpg);}
+	div[Food='Eggplant']{background-image: url(/img/foods/phone/eggplant.jpg);}
+	div[Food='Fava Beans']{background-image: url(/img/foods/phone/favabeans.jpg);}
+	div[Food='Fennel']{background-image: url(/img/foods/phone/fennel.jpg);}
+	div[Food='Grapefruit']{background-image: url(/img/foods/phone/grapefruit.jpg);}
+	div[Food='Grapes']{background-image: url(/img/foods/phone/grapes.jpg);}
+	div[Food='Green Beans']{background-image: url(/img/foods/phone/greenbeans.jpg);}
+	div[Food='Honey']{background-image: url(/img/foods/phone/honey.jpg);}
+	div[Food='Kale']{background-image: url(/img/foods/phone/kale.jpg);}
+	div[Food='Lavender']{background-image: url(/img/foods/phone/lavender.jpg);}
+	div[Food='Lettuce']{background-image: url(/img/foods/phone/lettuce.jpg);}
+	div[Food='Lima Beans']{background-image: url(/img/foods/phone/limabeans.jpg);}
+	div[Food='Mint']{background-image: url(/img/foods/phone/mint.jpg);}
+	div[Food='Mushrooms']{background-image: url(/img/foods/phone/mushrooms.jpg);}
+	div[Food='Nectarines']{background-image: url(/img/foods/phone/nectarines.jpg);}
+	div[Food='Okra']{background-image: url(/img/foods/phone/okra.jpg);}
+	div[Food='Onions']{background-image: url(/img/foods/phone/onions.jpg);}
+	div[Food='Oranges']{background-image: url(/img/foods/phone/oranges.jpg);}
+	div[Food='Parsley']{background-image: url(/img/foods/phone/parsley.jpg);}
+	div[Food='Parsnips']{background-image: url(/img/foods/phone/parsnips.jpg);}
+	div[Food='Peaches']{background-image: url(/img/foods/phone/peaches.jpg);}
+	div[Food='Peanuts']{background-image: url(/img/foods/phone/peanuts.jpg);}
+	div[Food='Pears']{background-image: url(/img/foods/phone/pears.jpg);}
+	div[Food='Peas']{background-image: url(/img/foods/phone/peas.jpg);}
+	div[Food='Pecans']{background-image: url(/img/foods/phone/pecans.jpg);}
+	div[Food='Pistachios']{background-image: url(/img/foods/phone/pistachios.jpg);}
+	div[Food='Plums']{background-image: url(/img/foods/phone/plums.jpg);}
+	div[Food='Polish Chocolate']{background-image: url(/img/foods/phone/polishchocolate.jpg);}
+	div[Food='Potatoes']{background-image: url(/img/foods/phone/potatoes.jpg);}
+	div[Food='Pumpkin']{background-image: url(/img/foods/phone/pumpkin.jpg);}
+	div[Food='Radishes']{background-image: url(/img/foods/phone/radishes.jpg);}
+	div[Food='Raspberries']{background-image: url(/img/foods/phone/raspberries.jpg);}
+	div[Food='Rhubarb']{background-image: url(/img/foods/phone/rhubarb.jpg);}
+	div[Food='Rutabaga']{background-image: url(/img/foods/phone/rutabaga.jpg);}
+	div[Food='Sage']{background-image: url(/img/foods/phone/sage.jpg);}
+	div[Food='Scallions']{background-image: url(/img/foods/phone/scallions.jpg);}
+	div[Food='Snap Peas']{background-image: url(/img/foods/phone/snappeas.jpg);}
+	div[Food='Spinach']{background-image: url(/img/foods/phone/spinach.jpg);}
+	div[Food='Squash']{background-image: url(/img/foods/phone/squash.jpg);}
+	div[Food='Strawberries']{background-image: url(/img/foods/phone/strawberries.jpg);}
+	div[Food='Sweet Potatoes']{background-image: url(/img/foods/phone/sweetpotatoes.jpg);}
+	div[Food='Tomatoes']{background-image: url(/img/foods/phone/tomatoes.jpg);}
+	div[Food='Turnips']{background-image: url(/img/foods/phone/turnips.jpg);}
+	div[Food='Valerian']{background-image: url(/img/foods/phone/valerian.jpg);}
+	div[Food='Watermelon']{background-image: url(/img/foods/phone/watermelon.jpg);}
+	div[Food='Zucchini']{background-image: url(/img/foods/phone/zucchini.jpg);}
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+/* Styles */
+}
+
+
+/* Non-Mobile Retina Displays (portrait and landscape) ----------- */
+@media only screen and (min--moz-device-pixel-ratio: 2) and (min-width : 768px),
+only screen and (-o-min-device-pixel-ration: 2/1) and (min-width : 768px),
+only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width : 768px),
+only screen and (min-device-pixel-ratio: 2) and (min-width : 768px) {
+	div[Food='Apples']{background-image: url(/img/foods/retina/apples@2x.jpg); }
+	div[Food='Apricots']{background-image: url(/img/foods/retina/apricots@2x.jpg);}
+	div[Food='Arugula']{background-image: url(/img/foods/retina/arugula@2x.jpg);}
+	div[Food='Asian Pears']{background-image: url(/img/foods/retina/asianpears@2x.jpg);}
+	div[Food='Asparagus']{background-image: url(/img/foods/retina/asparagus@2x.jpg);}
+	div[Food='Avocados']{background-image: url(/img/foods/retina/avocados@2x.jpg);}
+	div[Food='Basil']{background-image: url(/img/foods/retina/basil@2x.jpg);}
+	div[Food='Beets']{background-image: url(/img/foods/retina/beets@2x.jpg);}
+	div[Food='Blackberries']{background-image: url(/img/foods/retina/blackberries@2x.jpg);}
+	div[Food='Blueberries']{background-image: url(/img/foods/retina/blueberries@2x.jpg);}
+	div[Food='Bok Choy']{background-image: url(/img/foods/retina/bokchoy@2x.jpg);}
+	div[Food='Broccoli']{background-image: url(/img/foods/retina/broccoli@2x.jpg);}
+	div[Food='Brussel Sprouts']{background-image: url(/img/foods/retina/brusselssprouts@2x.jpg);}
+	div[Food='Cabbage']{background-image: url(/img/foods/retina/cabbage@2x.jpg);}
+	div[Food='Cantaloupe']{background-image: url(/img/foods/retina/cantaloupe@2x.jpg);}
+	div[Food='Carrots']{background-image: url(/img/foods/retina/carrots@2x.jpg);}
+	div[Food='Cauliflower']{background-image: url(/img/foods/retina/cauliflower@2x.jpg);}
+	div[Food='Celery']{background-image: url(/img/foods/retina/celery@2x.jpg);}
+	div[Food='Chard']{background-image: url(/img/foods/retina/chard@2x.jpg);}
+	div[Food='Cherries']{background-image: url(/img/foods/retina/cherries@2x.jpg);}
+	div[Food='Corn']{background-image: url(/img/foods/retina/corn@2x.jpg);}
+	div[Food='Cucumbers']{background-image: url(/img/foods/retina/cucumbers@2x.jpg);}
+	div[Food='Currants']{background-image: url(/img/foods/retina/currants@2x.jpg);}
+	div[Food='Eggplant']{background-image: url(/img/foods/retina/eggplant@2x.jpg);}
+	div[Food='Fava Beans']{background-image: url(/img/foods/retina/favabeans@2x.jpg);}
+	div[Food='Fennel']{background-image: url(/img/foods/retina/fennel@2x.jpg);}
+	div[Food='Grapefruit']{background-image: url(/img/foods/retina/grapefruit@2x.jpg);}
+	div[Food='Grapes']{background-image: url(/img/foods/retina/grapes@2x.jpg);}
+	div[Food='Green Beans']{background-image: url(/img/foods/retina/greenbeans@2x.jpg);}
+	div[Food='Honey']{background-image: url(/img/foods/retina/honey@2x.jpg);}
+	div[Food='Kale']{background-image: url(/img/foods/retina/kale@2x.jpg);}
+	div[Food='Lavender']{background-image: url(/img/foods/retina/lavender@2x.jpg);}
+	div[Food='Lettuce']{background-image: url(/img/foods/retina/lettuce@2x.jpg);}
+	div[Food='Lima Beans']{background-image: url(/img/foods/retina/limabeans@2x.jpg);}
+	div[Food='Mint']{background-image: url(/img/foods/retina/mint@2x.jpg);}
+	div[Food='Mushrooms']{background-image: url(/img/foods/retina/mushrooms@2x.jpg);}
+	div[Food='Nectarines']{background-image: url(/img/foods/retina/nectarines@2x.jpg);}
+	div[Food='Okra']{background-image: url(/img/foods/retina/okra@2x.jpg);}
+	div[Food='Onions']{background-image: url(/img/foods/retina/onions@2x.jpg);}
+	div[Food='Oranges']{background-image: url(/img/foods/retina/oranges@2x.jpg);}
+	div[Food='Parsley']{background-image: url(/img/foods/retina/parsley@2x.jpg);}
+	div[Food='Parsnips']{background-image: url(/img/foods/retina/parsnips@2x.jpg);}
+	div[Food='Peaches']{background-image: url(/img/foods/retina/peaches@2x.jpg);}
+	div[Food='Peanuts']{background-image: url(/img/foods/retina/peanuts@2x.jpg);}
+	div[Food='Pears']{background-image: url(/img/foods/retina/pears@2x.jpg);}
+	div[Food='Peas']{background-image: url(/img/foods/retina/peas@2x.jpg);}
+	div[Food='Pecans']{background-image: url(/img/foods/retina/pecans@2x.jpg);}
+	div[Food='Pistachios']{background-image: url(/img/foods/retina/pistachios@2x.jpg);}
+	div[Food='Plums']{background-image: url(/img/foods/retina/plums@2x.jpg);}
+	div[Food='Polish Chocolate']{background-image: url(/img/foods/retina/polishchocolate@2x.jpg);}
+	div[Food='Potatoes']{background-image: url(/img/foods/retina/potatoes@2x.jpg);}
+	div[Food='Pumpkin']{background-image: url(/img/foods/retina/pumpkin@2x.jpg);}
+	div[Food='Radishes']{background-image: url(/img/foods/retina/radishes@2x.jpg);}
+	div[Food='Raspberries']{background-image: url(/img/foods/retina/raspberries@2x.jpg);}
+	div[Food='Rhubarb']{background-image: url(/img/foods/retina/rhubarb@2x.jpg);}
+	div[Food='Rutabaga']{background-image: url(/img/foods/retina/rutabaga@2x.jpg);}
+	div[Food='Sage']{background-image: url(/img/foods/retina/sage@2x.jpg);}
+	div[Food='Scallions']{background-image: url(/img/foods/retina/scallions@2x.jpg);}
+	div[Food='Snap Peas']{background-image: url(/img/foods/retina/snappeas@2x.jpg);}
+	div[Food='Spinach']{background-image: url(/img/foods/retina/spinach@2x.jpg);}
+	div[Food='Squash']{background-image: url(/img/foods/retina/squash@2x.jpg);}
+	div[Food='Strawberries']{background-image: url(/img/foods/retina/strawberries@2x.jpg);}
+	div[Food='Sweet Potatoes']{background-image: url(/img/foods/retina/sweetpotatoes@2x.jpg);}
+	div[Food='Tomatoes']{background-image: url(/img/foods/retina/tomatoes@2x.jpg);}
+	div[Food='Turnips']{background-image: url(/img/foods/retina/turnips@2x.jpg);}
+	div[Food='Valerian']{background-image: url(/img/foods/retina/valerian@2x.jpg);}
+	div[Food='Watermelon']{background-image: url(/img/foods/retina/watermelon@2x.jpg);}
+	div[Food='Zucchini']{background-image: url(/img/foods/retina/zucchini@2x.jpg);}
+}
